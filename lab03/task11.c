@@ -29,7 +29,7 @@ void print_matrix_border(int a[NMAX][NMAX], int x, int y, int p, int q) {
 		printf("%d ", a[i][q - 1]);
 	}
 
-	for (int i = q - 1; i >= y; i--) {
+	for (int i = q - 2; i >= y; i--) {
 		printf("%d ", a[p - 1][i]);
 	}
 	
@@ -41,7 +41,7 @@ void print_matrix_border(int a[NMAX][NMAX], int x, int y, int p, int q) {
 void print_spiral_recursive(int a[NMAX][NMAX], int x, int y, int p, int q) {
 	if (x <= p && y <= q) {
 		print_matrix_border(a, x, y, p, q);
-		print_spiral_recursive(a, x + 1, y + 1, p + 1, q + 1);
+		print_spiral_recursive(a, x + 1, y + 1, p - 1, q - 1);
 	}
 }
 
